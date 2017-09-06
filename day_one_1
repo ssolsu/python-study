@@ -1,0 +1,22 @@
+# coding = utf-8
+# Practice class string methods
+# 使用 Python 如何生成 200 个激活码？
+import string
+import random
+KEY_LEN = 20   # coupon's key length
+KEY_ALL = 200  # coupon total of 200 coupons
+ALL_STRING_NUMBER = string.ascii_letters + string.digits  # create all letters and 0-9 numbers
+
+
+def key_gen():
+    kwlist = [random.choice(ALL_STRING_NUMBER) for i in range(KEY_LEN)]  # Random choice 20 letters from variables
+    return "".join(kwlist)
+
+
+def print_key():  # num is 200
+    for i in range(KEY_ALL):  # 循环200次，同时调用key_num
+        print(key_gen())
+
+
+if __name__ == "__main__":
+    print_key()
